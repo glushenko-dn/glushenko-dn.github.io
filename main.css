@@ -1,0 +1,782 @@
+@font-face{
+    font-family: FontAwesome;
+    src: url("fonts/fontawesome-webfont.ttf");
+}
+@font-face{
+    font-family: Normal;
+    src: url("fonts/Ubuntu-R.ttf");
+}
+@font-face{
+    font-family: Bold;
+    src: url("fonts/GothamPro-Medium.ttf");
+}
+
+/*=====  Сброс параметров  =====*/
+*{font-weight: normal;}
+b{
+    font-weight: normal;
+    font-family: Bold, sans-serif;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: underline;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*===========================================  Общие параметры  ===============================================*/
+
+html{
+    /*=====  Переменные цветов  =====*/
+    --base-font: #454545;
+    --white-font: #f7f7f7;
+    --blue-font: #0E5785;
+    --white-blue-font: #4DBAFF;
+    --white-green-font: #ADCC3A;
+    --green-font: #8fa930;
+    --header-font: #e7e7e7;
+    --marker-font: #777777;
+    --bg-grey: #333333;
+
+    /*=====  REM  =====*/
+    font-size: 15px;
+
+    /*=====  Размеры  =====*/
+    --col2-width: 100%;
+    --col3-width: 100%;
+    --col3-2-width: 100%;
+    --col4-width: 100%;
+    --col6-width: 50%;
+    --correct: 1rem;
+    --correct2: 0;
+    --container1-width: 100%;
+    --container2-width: 100%;
+    --content-width: 100%;
+    --h1-width: 90%;
+}
+body{
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    color: var(--base-font);
+    font-family: Normal, Sans-serif;
+}
+blockquote{
+    position: relative;
+    font-size: 0.8em;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    width: var(--content-width);
+    box-sizing: border-box;
+}
+blockquote::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0; top: 0;
+    width: 4px; height: 100%;
+    border-radius: 2px;
+    background-color: var(--green-font);
+}
+
+/*=====  Раздел  =====*/
+
+.container{
+    padding: 2rem 1rem 0;
+    margin: 0 auto;
+    max-width: 1100px;
+    box-sizing: border-box;
+}
+.container > p, .container > h2{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 960px;
+    width: var(--content-width);
+}
+.container > .lined{
+    padding-top: 2em;
+    position: relative;
+}
+.container > .lined::before{
+    content: "";
+    position: absolute;
+    top: -2px; left: 50%;
+    width: 4rem; height: 4px;
+    margin-left: -2rem;
+    display: block;
+    border-radius: 2px;
+    background-color: var(--marker-font);
+}
+.box{
+    box-sizing: border-box;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.box > *{box-sizing: border-box;}
+
+
+/*=====  Призыв к действию  =====*/
+
+.cta{
+    font-family: Bold, sans-serif;
+    font-size: 1.17em;
+    margin: 2rem auto 0;
+    padding-bottom: 2rem;
+}
+.cta b{color: var(--blue-font);}
+.cta span{font-size: 1.3em;}
+
+/*=====  Заголовки разделов  =====*/
+
+h1{
+    font-family: Bold, sans-serif;
+    margin: auto;
+}
+h2{
+    font-family: Bold, sans-serif;
+    margin: 0 auto 2rem;
+    padding-top: 2rem;
+    position: relative;
+}
+h2::before, h2::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 2rem; height: 4px;
+    border-radius: 2px;
+    background-color: var(--marker-font);
+    top: 0; left: 50%; margin-left: -1rem;
+}
+h2::after{
+    width: 4rem; top: 1rem;
+    margin-top: -2px;
+    margin-left: -2rem;
+}
+
+
+/*============================================  Banner  ==================================================*/
+
+#banner{
+    font-family: Bold, sans-serif;
+    background-color: var(--bg-grey);
+    padding: 2rem 0;
+    color: var(--white-font);
+}
+#banner .container{width: var(--container2-width)}
+#banner h1{
+    text-align: center;
+    width: var(--h1-width);
+}
+#banner b{color: var(--white-blue-font);}
+
+#banner ul{padding: 2rem 0;}
+
+#banner li[class^="icon"]{
+    position: relative;
+    display: block;
+    padding: 0.5rem 0 0.5rem 2.5rem
+}
+#banner li[class^="icon"]::before{
+    color: var(--white-blue-font);
+    font-family: FontAwesome;
+    font-size: 1.25rem;
+    width: 2rem; height: 2rem; line-height: 2rem;
+    position: absolute;
+    left: 0; top: 0.28rem;
+    text-align: center;
+}
+#banner .cta{font-size: 1.5em;}
+
+
+/*=============================================  Удобства  =================================================*/
+
+#plus .container{width: var(--container1-width)}
+#plus .box > *{width: var(--col3-width);}
+#plus .box ul{
+    padding: 2rem;
+    padding-left: 3.5rem;
+}
+#plus .box ul li.title{
+    position: relative;
+    font-family: Bold, sans-serif;
+    color: var(--blue-font);
+    font-size: 1.05em;
+}
+#plus .box ul li:last-child{
+    font-size: 0.95em;
+}
+#plus .box ul li.title::before{
+    display: block;
+    position: absolute;
+    left: -2.5rem; top: 0.075rem;
+    font-family: FontAwesome;
+    font-size: 1.5rem;
+    width: 2rem; height: 1.5rem; line-height: 1.5rem;
+    text-align: center;
+    color: var(--green-font);
+}
+
+/*==============================================  Как заказать  ===============================================*/
+
+#zakaz{
+    background-color: var(--bg-grey);
+    color: var(--white-font);
+}
+#zakaz .container{width: var(--container1-width)}
+#zakaz .box{justify-content: space-around;}
+#zakaz ul{
+    width: calc(var(--col4-width) - var(--correct));
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: white;
+    text-align: center;
+    margin: calc(var(--correct)/2) 0;
+    color: var(--base-font);
+}
+#zakaz li.icon{
+    display: block;
+    float: left;
+    min-width: 4rem;
+    width: calc((20rem - 100%)*1000);
+    max-width: 100%;
+    max-height: 4rem;
+    overflow: hidden;
+}
+#zakaz li.icon::after{
+    content: "";
+    display: block;
+    padding-bottom: calc((100% - 4rem)*1000);
+}
+#zakaz li:last-child{
+    font-family: Bold, sans-serif;
+    display: block;
+    /*font-size: 0.9em;*/
+}
+#zakaz span[class^="icon"]{
+    display: inline-block;
+}
+#zakaz span[class^="icon"]::before{
+    font-family: FontAwesome;
+    font-size: 3rem;
+    width: 3rem; height: 3rem; line-height: 3rem;
+    display: block;
+    color: var(--green-font);
+}
+#zakaz b{color: var(--white-blue-font);}
+#zakaz ul b{color: var(--blue-font);}
+
+
+/*================================================  Цены  ===================================================*/
+
+#price .container{width: var(--container1-width)}
+
+#price .box{justify-content: space-between;}
+
+#price .box > ul{
+    width: var(--col2-width);
+    padding: 1rem;
+}
+#price .box ul li{
+    font-size: 0.95em;
+}
+#price .box li:last-child{
+    box-sizing: border-box;
+    padding: 0.5rem;
+    background-color: var(--green-font);
+    color: var(--white-font);
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+}
+#price .box li:first-child{
+    color: var(--blue-font);
+    font-family: Bold;
+    font-size: 1.05em;
+    color: var(--blue-font);
+}
+@media screen and (min-width: 640px){
+    #price .box ul{
+        position: relative;
+        padding-right: 8rem;        
+    }
+    #price .box ul::after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0rem; left: 1rem;
+        width: calc(100% - 2rem);
+        border-bottom: 1px solid var(--green-font);
+    }
+    #price .box li:last-child{
+        position: absolute;
+        top: 1rem; right: 1rem;
+        width: 6rem; height: calc(100% - 2rem);
+        padding: 0.5rem 1rem;
+        margin: 0;
+    }
+}
+
+/*=============================================  Преимущества  ==================================================*/
+
+#final{
+    background-color: var(--bg-grey);
+    color: var(--white-font);
+}
+#final .container{width: var(--container1-width)}
+
+#final .box{
+    color: var(--base-font);
+    text-align: center;
+    justify-content: space-between;
+}
+#final .box > ul{
+    border-radius: 6px;
+    background-color: #ffffff;
+    width: calc(var(--col3-2-width) - var(--correct2));
+    padding: 2rem 1rem;
+    margin: 0.5rem 0;
+}
+
+#final .title{
+    font-size: 1.1em;
+    position: relative;
+    color: var(--blue-font);
+    font-family: Bold;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+#final .title::after{
+    content: "";
+    width: 4rem; height: 2px;
+    background-color: var(--marker-font);
+    position: absolute;
+    bottom: -1px; left: 50%; margin-left: -2rem;
+}
+#final .cta b{color: var(--white-blue-font);}
+
+/*=============================================  Скидки  ==================================================*/
+
+#discount .container{width: var(--container2-width)}
+#discount .container{width: 80%;}
+#discount .box{
+    justify-content: space-around;
+}
+#discount .box ul{
+    width: calc(var(--col4-width) - var(--correct));
+    text-align: center;
+    max-width: 20rem;
+    margin: 2rem auto;
+}
+#discount .box li[class^="pic"]{
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+    border: 1px solid var(--green-font);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#discount li.pic-01{background-image: url("images/discount-01.jpg");}
+#discount li.pic-02{background-image: url("images/discount-02.jpg");}
+#discount li.pic-03{background-image: url("images/discount-03.jpg");}
+#discount li.pic-04{background-image: url("images/discount-04.jpg");}
+#discount .box li[class^="pic"]::before{
+    content: "";
+    padding-top: 100%;
+    display: block;
+}
+#discount .box li{
+}
+#discount .box li span{
+    display: block;
+    position: absolute;
+    bottom: -1rem; left: 50%;
+    margin-left: -3rem;
+    color: white;
+    background-color: var(--green-font);
+    border-radius: 50%;
+    font-size: 1.69em;
+    width: 6rem; height: 6rem; line-height: 6rem;
+}
+
+/*=============================================  Контакты  ==================================================*/
+
+#contacts .container{width: var(--container2-width)}
+#contacts{
+    background-color: var(--bg-grey);
+    padding-bottom: 2rem;
+    color: var(--white-font);
+}
+#contacts .box{margin-bottom: 0;}
+#contacts .box > *{
+    width: var(--col2-width);
+    padding: 1rem;
+}
+#contacts .box div{
+    background-color: white;
+    padding: 0;
+}
+#contacts li b{
+    color: var(--white-blue-font);
+    text-decoration: underline;
+    font-size: 1.69em;
+}
+#contacts li[class^="icon"]::before{
+    display: inline-block;
+    width: 1.8rem;
+    padding-right: 1rem;
+    text-align: center;
+    font-family: FontAwesome;
+    color: var(--white-green-font);
+    font-size: 1.69em;
+}
+
+#contacts img{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*================================================  Кнопка звонка  ==========================================*/
+
+.callback-bt {
+    left: 1em;
+    bottom: 1em;
+    background:#38a3fd;
+    border:2px solid #38a3fd;
+    border-radius:50%;
+    box-shadow:0 8px 10px rgba(56,163,253,0.3);
+    cursor:pointer;
+    position: fixed;
+    height:68px;
+    text-align:center;
+    width:68px;
+    z-index:999;
+    transition:.3s;
+    -webkit-animation:hoverWave linear 1s infinite;
+    animation:hoverWave linear 1s infinite;
+    margin: 0;
+    padding: 0;
+    }
+
+    .callback-bt .text-call{
+        height:68px;
+        width:68px;        
+        border-radius:50%;
+        position:relative;
+        overflow:hidden;
+    }
+
+    .callback-bt .text-call span {
+        text-align: center;
+        color:#38a3fd;
+        opacity: 0;
+        font-size: 0;
+            position:absolute;
+            right: 4px;
+            top: 22px;
+        line-height: 14px;
+            font-weight: 600;
+        text-transform: uppercase;
+        transition: opacity .3s linear;
+        font-family: sans-serif;
+    }
+
+    
+    .callback-bt .text-call:hover span {
+        opacity: 1;
+            font-size: 11px;
+    }
+    .callback-bt:hover i {display:none;}
+
+    .callback-bt:hover {
+            z-index:1;
+            background:#fff;
+            color:transparent;
+            transition:.3s;
+    }
+    .callback-bt:hover i {
+            color:#38a3fd;
+            font-size:40px;
+            transition:.3s;
+    }
+    
+    .callback-bt i {
+            color:#fff;
+            font-size:34px;
+            transition:.3s;
+            line-height: 66px;transition: .5s ease-in-out;
+    }
+
+    .callback-bt i  {
+        animation: 1200ms ease 0s normal none 1 running shake;
+            animation-iteration-count: infinite;
+            -webkit-animation: 1200ms ease 0s normal none 1 running shake;
+            -webkit-animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes hoverWave {
+            0% {
+            box-shadow:0 8px 10px rgba(56,163,253,0.3),0 0 0 0 rgba(56,163,253,0.2),0 0 0 0 rgba(56,163,253,0.2)
+    }
+    40% {
+            box-shadow:0 8px 10px rgba(56,163,253,0.3),0 0 0 15px rgba(56,163,253,0.2),0 0 0 0 rgba(56,163,253,0.2)
+    }
+    80% {
+            box-shadow:0 8px 10px rgba(56,163,253,0.3),0 0 0 30px rgba(56,163,253,0),0 0 0 26.7px rgba(56,163,253,0.067)
+    }
+    100% {
+            box-shadow:0 8px 10px rgba(56,163,253,0.3),0 0 0 30px rgba(56,163,253,0),0 0 0 40px rgba(56,163,253,0.0)
+    }
+    }@keyframes hoverWave {
+            0% {
+            box-shadow:0 8px 10px rgba(56,163,253,0.3),0 0 0 0 rgba(56,163,253,0.2),0 0 0 0 rgba(56,163,253,0.2)
+    }
+    40% {
+            box-shadow:0 8px 10px rgba(56,163,253,0.3),0 0 0 15px rgba(56,163,253,0.2),0 0 0 0 rgba(56,163,253,0.2)
+    }
+    80% {
+            box-shadow:0 8px 10px rgba(56,163,253,0.3),0 0 0 30px rgba(56,163,253,0),0 0 0 26.7px rgba(56,163,253,0.067)
+    }
+    100% {
+            box-shadow:0 8px 10px rgba(56,163,253,0.3),0 0 0 30px rgba(56,163,253,0),0 0 0 40px rgba(56,163,253,0.0)
+    }
+    }
+
+    /* animations icon */
+
+    @keyframes shake {
+    0% {
+        transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            -webkit-transform: rotateZ(0deg);
+    }
+    10% {
+        transform: rotateZ(-30deg);
+            -ms-transform: rotateZ(-30deg);
+            -webkit-transform: rotateZ(-30deg);
+    }
+    20% {
+        transform: rotateZ(15deg);
+            -ms-transform: rotateZ(15deg);
+            -webkit-transform: rotateZ(15deg);
+    }
+    30% {
+        transform: rotateZ(-10deg);
+            -ms-transform: rotateZ(-10deg);
+            -webkit-transform: rotateZ(-10deg);
+    }
+    40% {
+        transform: rotateZ(7.5deg);
+            -ms-transform: rotateZ(7.5deg);
+            -webkit-transform: rotateZ(7.5deg);
+    }
+    50% {
+        transform: rotateZ(-6deg);
+            -ms-transform: rotateZ(-6deg);
+            -webkit-transform: rotateZ(-6deg);
+    }
+    60% {
+        transform: rotateZ(5deg);
+            -ms-transform: rotateZ(5deg);
+            -webkit-transform: rotateZ(5deg);
+    }
+    70% {
+        transform: rotateZ(-4.28571deg);
+            -ms-transform: rotateZ(-4.28571deg);
+            -webkit-transform: rotateZ(-4.28571deg);
+    }
+    80% {
+        transform: rotateZ(3.75deg);
+            -ms-transform: rotateZ(3.75deg);
+            -webkit-transform: rotateZ(3.75deg);
+    }
+    90% {
+        transform: rotateZ(-3.33333deg);
+            -ms-transform: rotateZ(-3.33333deg);
+            -webkit-transform: rotateZ(-3.33333deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            -webkit-transform: rotateZ(0deg);
+    }
+    }
+
+    @-webkit-keyframes shake {
+    0% {
+        transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            -webkit-transform: rotateZ(0deg);
+    }
+    10% {
+        transform: rotateZ(-30deg);
+            -ms-transform: rotateZ(-30deg);
+            -webkit-transform: rotateZ(-30deg);
+    }
+    20% {
+        transform: rotateZ(15deg);
+            -ms-transform: rotateZ(15deg);
+            -webkit-transform: rotateZ(15deg);
+    }
+    30% {
+        transform: rotateZ(-10deg);
+            -ms-transform: rotateZ(-10deg);
+            -webkit-transform: rotateZ(-10deg);
+    }
+    40% {
+        transform: rotateZ(7.5deg);
+            -ms-transform: rotateZ(7.5deg);
+            -webkit-transform: rotateZ(7.5deg);
+    }
+    50% {
+        transform: rotateZ(-6deg);
+            -ms-transform: rotateZ(-6deg);
+            -webkit-transform: rotateZ(-6deg);
+    }
+    60% {
+        transform: rotateZ(5deg);
+            -ms-transform: rotateZ(5deg);
+            -webkit-transform: rotateZ(5deg);
+    }
+    70% {
+        transform: rotateZ(-4.28571deg);
+            -ms-transform: rotateZ(-4.28571deg);
+            -webkit-transform: rotateZ(-4.28571deg);
+    }
+    80% {
+        transform: rotateZ(3.75deg);
+            -ms-transform: rotateZ(3.75deg);
+            -webkit-transform: rotateZ(3.75deg);
+    }
+    90% {
+        transform: rotateZ(-3.33333deg);
+            -ms-transform: rotateZ(-3.33333deg);
+            -webkit-transform: rotateZ(-3.33333deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+            -ms-transform: rotateZ(0deg);
+            -webkit-transform: rotateZ(0deg);
+    }
+    }
+    /* конец кнопки звонка */
+    .phone{
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+    .phone::before{
+        content: "\f095";
+    }
+    .callback-bt a{
+        display: block;
+        font: inherit;
+    }
+    .callback-bt *{margin: 0; padding: 0;}
+
+/*================================================  Иконки  =================================================*/
+
+.icon-cal::before{content: "\f073"}
+.icon-day::before{content: "\f046"}
+.icon-cash::before{content: "\f2b5"}
+.icon-sum::before{content: "\f1ec"}
+.icon-home::before{content: "\f015"}
+.icon-zip::before{content: "\f085"}
+.icon-garant::before{content: "\f132"}
+.icon-phone::before{content: "\f095"}
+.icon-phone2::before{content: "\f098"}
+.icon-message::before{content: "\f27b"}
+.icon-cal-time::before{content: "\f274"}
+.icon-wait::before{content: "\f11e"}
+.icon-map::before{content: "\f041"}
+.icon-time::before{content: "\f017"}
+.icon-ok::before{content: "\f087"}
+
+
+
+/*================================================  Медиа запросы  =============================================*/
+
+@media screen and (max-width: 767px){
+    .desktop{display: none;}
+}
+@media screen and (min-width: 430px){
+    html{--col6-wdth: 33.33%;}
+}
+@media screen and (min-width: 640px){
+    html{
+        --content-width: 80%;
+        --col3-width: 50%;
+        --col4-width: 50%;
+        --col6-width: 25%;
+        --correct: 2rem;
+        --h1-width: 80%;
+    }
+    body{font-size: 17px;}
+    #banner h1{
+        text-align: left;
+        margin-left: 0;
+    }
+    .container{padding: 2rem 2rem 0;}
+}
+
+@media (min-width: 768px){
+    html{
+        --container2-width: 90%;
+        --h1-width: 70%;
+        --col6-width: 16.66%;
+    }
+    body{font-size: 16px;}
+    #banner.sma{
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/fon-01.jpg");
+        background-size: auto, cover;
+        background-repeat: repeat, no-repeat;
+    }
+    #banner.vdn{
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/fon-04.jpg");
+        background-size: auto, cover;
+        background-repeat: repeat, no-repeat;
+        background-position-y: bottom;
+    }
+    #zakaz{
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/fon-02.jpg");
+        background-size: auto, cover;
+        background-repeat: repeat, no-repeat;
+        background-position-y: bottom;
+    }
+    #contacts{
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/fon-03.jpg");
+        background-size: auto, cover;
+        background-repeat: repeat, no-repeat;
+    }
+}
+
+@media screen and (min-width: 960px){
+    html{
+        --col2-width: 50%;
+        --col3-width: 33.33%;
+        --col3-2-width: 33.33%;
+        --correct2: 1rem;
+        --col4-width: 25%;
+        --correct: 3rem;
+        --container2-width: 80%;
+        --h1-width: 60%;
+    }
+    body{font-size: 16px;}
+    .mobile{display: none;}
+}
+
+@media screen and (min-width: 1360px){
+    html{--container1-width: 80%;}
+}
