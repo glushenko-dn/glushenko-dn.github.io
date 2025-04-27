@@ -1,0 +1,45 @@
+.main{
+	width: 400px;
+	height: 400px;
+	background-color: grey;
+	position: relative;
+	margin: 50px auto;
+}
+[data-target]{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	box-sizing: border-box;
+}
+[data-target]::before{
+	content: attr(data-target);
+	display: inline;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	font-family: sans-serif;
+	font-size: 40px;
+}
+[data-target="16"]{
+	visibility: hidden;
+}
+[data-position]{
+	transition: all 0.15s ease-in 0s;
+	background-color: yellow;
+	border-style: solid;
+	border-width: 1px;
+	border-color: red;
+}
+
+/* задаём позицию строк */
+[data-position="1"], [data-position="2"], [data-position="3"], [data-position="4"]{ top: 0; }
+[data-position="5"], [data-position="6"], [data-position="7"], [data-position="8"]{ top: 100px; }
+[data-position="9"], [data-position="10"], [data-position="11"], [data-position="12"]{ top: 200px; }
+[data-position="13"], [data-position="14"], [data-position="15"], [data-position="16"]{ top: 300px; }
+
+/* задаём позицию столбцов */
+[data-position="1"], [data-position="5"], [data-position="9"], [data-position="13"]{ left: 0; }
+[data-position="2"], [data-position="6"], [data-position="10"], [data-position="14"]{ left: 100px; }
+[data-position="3"], [data-position="7"], [data-position="11"], [data-position="15"]{ left: 200px; }
+[data-position="4"], [data-position="8"], [data-position="12"], [data-position="16"]{ left: 300px; }
